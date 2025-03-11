@@ -6,11 +6,11 @@ import useRepos from "../services/useRepos";
    return (
      <>
        <h1>toto</h1>
-       {/*data.map((repo) => (
+       {data.map((repo) => (
          <RepoCard repo={repo} key={repo.url} />
           
          
-       ))*/}
+       ))}
        ;
      </>
    );
