@@ -4,8 +4,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
  import Contact from "./pages/Contact.tsx";
  import Home from "./pages/Home.tsx";
 import App from './App.tsx'
-import FAQ from "./pages/FAQ.tsx";
+import Faq from "./pages/FAQ.tsx";
  import RepoPage from "./pages/RepoPage.tsx";
+ import RepoForm from "./pages/RepoForm.tsx";
  
  import client from "./services/client.ts";
  
@@ -31,8 +32,12 @@ import FAQ from "./pages/FAQ.tsx";
        },
        {
          path: "/faq",
-         element: <FAQ />,
+         element: <Faq />,
        },
+       {
+        path: "repo/create",
+        element: <RepoForm />,
+      },
      ],
      //loader: async () => {
      //const result = await client.get("/repos");
