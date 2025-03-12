@@ -1,6 +1,6 @@
 import { useState } from "react";
  import type { Repos } from "../types/repos.type";
-import { string } from "joi";
+import InputForm from "../components/Forms/inputform";
 
 const initialRepo = {
     id: "",
@@ -27,23 +27,24 @@ function RepoForm() {
     return (
          <form className="container">
         <h1 className= "text center">Ajout d'un repo</h1> 
-        <label>
-            Nom du repo
-            <input 
-            type="text"
-            name="name"
-            value= {newRepo?.name}
-            onChange={handleNewrepo}
-                />
-        </label>
-        <label>
-            contenu
-            <input type="text"
-            name= "description"
-            value= {newRepo?.description}
-            onChange={handleNewrepo}
-                />
-        </label>
+        <InputForm
+         handleNewRepo={handleNewrepo}
+         value={newRepo.name}
+         title="Titre du repo"
+         name="name"
+       />
+       <InputForm
+         handleNewRepo={handleNewrepo}
+         value={newRepo.description}
+         title="Description du repo"
+         name="description"
+       />
+       <InputForm
+         handleNewRepo={handleNewrepo}
+         value={newRepo.url}
+         title="Url du repo"
+         name="url"
+       />
     </form>
     );
 }
