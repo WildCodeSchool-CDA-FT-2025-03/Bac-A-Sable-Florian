@@ -5,4 +5,5 @@ import type { Languages } from "./languages.type";
    isPrivate: boolean;
    url: string;
    languages: Languages[];
+   name: string;
  };
