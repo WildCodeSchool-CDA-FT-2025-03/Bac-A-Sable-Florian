@@ -20,15 +20,20 @@ name:"",
 
 function RepoForm() {
     const [newRepo, setNewRepo] = useState<Repos>(initialRepo);
-    console.log(newRepo);
-    return <form className="container">
+    
+    const handleNewrepo = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setNewRepo(() => ({...newRepo, [e.target.name]: e.target.value}));
+    };
+    return (
+         <form className="container">
         <h1 className= "text center">Ajout d'un repo</h1> 
         <label>
             Nom du repo
-            <input type="text"
+            <input 
+            type="text"
             name="name"
             value= {newRepo?.name}
-            onChange={(e) => setNewRepo({...newRepo, [e.target.name]: e.target.value})}
+            onChange={handleNewrepo}
                 />
         </label>
         <label>
@@ -36,15 +41,11 @@ function RepoForm() {
             <input type="text"
             name= "description"
             value= {newRepo?.description}
-            onChange={(e) => setNewRepo({...newRepo,[e.target.name]: e.target.value})}
+            onChange={handleNewrepo}
                 />
         </label>
     </form>
+    );
 }
-
-
-    
-
-
 
  export default RepoForm;
