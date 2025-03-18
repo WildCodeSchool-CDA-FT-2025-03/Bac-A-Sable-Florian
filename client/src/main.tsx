@@ -8,7 +8,7 @@ import Faq from "./pages/FAQ.tsx";
  import RepoPage from "./pages/RepoPage.tsx";
  import RepoForm from "./pages/RepoForm.tsx";
  
- /*import client from "./services/client.ts"*/;
+ import client from "./services/client.ts";
  
  import "./index.css";
  

@@ -8,12 +8,12 @@ import { useEffect } from "react";
  
    useEffect(() => {
      getOneRepos(id as string);
-   }, [id, getOneRepos]);
- 
+   }, [id]);
+ console.log(oneRepos);    
    return (
      <div>
        <h1>Voici la page avec le repo {id}</h1>
-       {/*oneRepos && oneRepos.languages.map((lg) => <h4>{lg.node.name}</h4>)*/}
+       <h4> {oneRepos?.name}</h4>
      </div>
    );
  }
